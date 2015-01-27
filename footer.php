@@ -66,6 +66,7 @@ Copyright <?php echo date('Y'); ?>
 										</div>
 									</div>        	
 								</div>
+								<div style="clear:both;"></div>
 							</div>
 						</div>
 						<div class="row hide">
@@ -82,7 +83,7 @@ Copyright <?php echo date('Y'); ?>
 					</div>
 				</div>
 			</div>
-			<div style="clear:both;"></div>
+
 		</footer>
 
 
