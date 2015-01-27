@@ -22,10 +22,10 @@ Copyright <?php echo date('Y'); ?>
 
 		<footer class="motopress-wrapper footer">
 			<div class="container">
-				<div class="row">
+				<div class="">
 					<div class="col-md-12">
 						<div class="extrafooter">
-							<div class="row footer-widgets">
+							<div class="footer-widgets">
 								<div class="col-md-3">
 									<div id="text-5">
 										<h4>Navegación</h4>
@@ -82,6 +82,7 @@ Copyright <?php echo date('Y'); ?>
 					</div>
 				</div>
 			</div>
+			<div style="clear:both;"></div>
 		</footer>
 
 
