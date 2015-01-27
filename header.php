@@ -21,10 +21,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+<!--link rel="stylesheet" type="text/css" media="all" href="<?php //bloginfo("template_url"); ?>/bootstrap/bootstrap.min.css"-->
+
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/styles/stylecherry.css">
-<!--link rel="stylesheet" type="text/css" media="all" href="<?php //bloginfo("template_url"); ?>/styles/bootstrap.css">
-<link rel="stylesheet" type="text/css" media="all" href="<?php //bloginfo("template_url"); ?>/styles/responsive.css"-->
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/styles/responsive.css">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/styles/flexslider.css">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/style.css">
 <link rel="stylesheet" id="cherry-plugin-css" href="<?php bloginfo("template_url"); ?>/styles/cherry-plugin.css" type="text/css" media="all">
@@ -72,12 +74,12 @@
 	<header class="motopress-wrapper header">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12" data-motopress-wrapper-file="wrapper/wrapper-header.php" data-motopress-wrapper-type="header" data-motopress-id="54c1d8935268b">
+				<div class="span12" data-motopress-wrapper-file="wrapper/wrapper-header.php" data-motopress-wrapper-type="header" data-motopress-id="54c1d8935268b">
 					<div class="extra_head">
 
 						<div class="extra_head2 isStuck" style="position: fixed; top: 0px;">
 							<div class="row">
-								<div class="col-md-3" >
+								<div class="span4" >
 									<!-- BEGIN LOGO -->
 									<div class="logo pull-left">
 										<a href="#" class="logo_h logo_h__img">
@@ -86,7 +88,7 @@
 									</div>
 									<!-- END LOGO -->        	
 								</div>
-								<div class="col-md-8">
+								<div class="span8">
 									<div class="menu_holder">	
 									<!-- BEGIN MAIN NAVIGATION -->
 									<nav class="nav nav__primary clearfix">

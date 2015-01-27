@@ -22,11 +22,11 @@ Copyright <?php echo date('Y'); ?>
 
 		<footer class="motopress-wrapper footer">
 			<div class="container">
-				<div class="">
-					<div class="col-md-12">
+				<div class="row">
+					<div class="span12">
 						<div class="extrafooter">
-							<div class="footer-widgets">
-								<div class="col-md-3">
+							<div class="row footer-widgets">
+								<div class="span3">
 									<div id="text-5">
 										<h4>Navegación</h4>
 										<div class="textwidget">
@@ -34,7 +34,7 @@ Copyright <?php echo date('Y'); ?>
 										</div>										
 									</div>    	
 								</div>
-								<div class="col-md-3">
+								<div class="span3">
 									<div id="text-6">
 										<h4>Proyectos</h4>
 										<div class="textwidget">
@@ -42,7 +42,7 @@ Copyright <?php echo date('Y'); ?>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="span3">
 									<div id="tag_cloud-3">
 										<h4>Compras</h4>
 										<div class="textwidget">
@@ -50,7 +50,7 @@ Copyright <?php echo date('Y'); ?>
 										</div>
 									</div>    	
 								</div>
-								<div class="col-md-3">
+								<div class="span3">
 									<div id="text-8">
 
 										<h4>Contactenos</h4>
@@ -66,11 +66,10 @@ Copyright <?php echo date('Y'); ?>
 										</div>
 									</div>        	
 								</div>
-								<div style="clear:both;"></div>
 							</div>
 						</div>
 						<div class="row hide">
-							<div class="col-md-12">
+							<div class="span12">
 								<div data-motopress-type="static" data-motopress-static-file="static/static-footer-text.php">
 									<div id="footer-text" class="footer-text">
 										<a href="/html Template.html" title="Cooperate with the best" class="site-name">Real Estate</a> © 2015 •
@@ -83,7 +82,6 @@ Copyright <?php echo date('Y'); ?>
 					</div>
 				</div>
 			</div>
-
 		</footer>
 
 
