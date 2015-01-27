@@ -1,0 +1,12 @@
+/* estilos css para convenios.html */
+.imgCentral.img-responsive {
+	margin: 0 auto;
+}
+
+.thumbnail {
+	border: none;
+}
+
+.divImgCentral {
+	margin-bottom: 4em;
+}
