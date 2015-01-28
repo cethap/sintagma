@@ -61,6 +61,12 @@
         }
       });
 
+
+      $('#GallerySlide').flexslider({
+        animation: "slide"
+      });
+
+
       $(window).resize(function(){
           if(homePage){
             $(".flex-viewport").css("max-height",$(window).height()-310);
