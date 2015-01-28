@@ -58,6 +58,45 @@ require get_template_directory() . '/inc/metaboxes/init-for-objestcs-mb.php';
 	
 
 
+
+
+//[GallerySlide]
+function GallerySlider( $atts, $content = null ){
+  
+    $a = shortcode_atts( array(
+        'images' => '',
+    ), $atts );
+
+
+    $a['frm2'] = explode(",", $a['images']);
+    $imgs = "";
+
+    for ($i=0; $i < $a['frm2']; $i++) { 
+
+		$image = wp_get_attachment_image_src($a['frm2'][$i], 'folio-image');
+
+    	$imgs .= "<li>";
+    		$imgs .= "<img src='".$image[0]."'>";
+    	$imgs .= "</li>";
+    }
+
+
+	return '
+	<div class="clearfix"></div>
+
+	<div id="GallerySlide" class="flexslider">
+	  <ul class="slides">
+	  	'.$imgs.'
+	  </ul>
+	</div>
+	';       
+
+}
+add_shortcode( 'GallerySlide', 'GallerySlider' );
+
+
+
+
 //[pro]
 function Pro_func( $atts, $content = null ){
   

@@ -79,7 +79,7 @@
 
 						<div class="extra_head2 isStuck" style="position: fixed; top: 0px;">
 							<div class="row">
-								<div class="span4" >
+								<div class="span3" >
 									<!-- BEGIN LOGO -->
 									<div class="logo pull-left">
 										<a href="#" class="logo_h logo_h__img">

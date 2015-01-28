@@ -10,12 +10,6 @@
 ?>
 
 
-<?php if (is_front_page()) {?>
-	<script type="text/javascript"> homePage = true; </script>
-<?php }else{ ?>
-	<script type="text/javascript"> homePage = false; </script>
-<?php } ?>
-
 <div id="slider" class="flexslider">
   <ul class="slides">
 	<?php if ( has_post_thumbnail() ) : ?>
