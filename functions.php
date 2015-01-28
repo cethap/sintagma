@@ -68,12 +68,12 @@ function GallerySlider( $atts, $content = null ){
     ), $atts );
 
 
-    $a['frm2'] = explode(",", $a['images']);
+    $ima = explode(",", $a['images']);
     $imgs = "";
 
-    for ($i=0; $i < $a['frm2']; $i++) { 
+    for ($i=0; $i < count($ima); $i++) { 
 
-		$image = wp_get_attachment_image_src($a['frm2'][$i], 'folio-image');
+		$image = wp_get_attachment_image_src($ima[$i], 'folio-image');
 
     	$imgs .= "<li>";
     		$imgs .= "<img src='".$image[0]."'>";
