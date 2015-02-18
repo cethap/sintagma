@@ -13,6 +13,9 @@ body { font-weight: normal; overflow-x:hidden; }
 .sf-menu > li > a { font: normal 15px/20px "Ubuntu",sans-serif;  color:#393c3d; }
 .nav.footer-nav a { font: normal 12px/18px "Ubuntu",sans-serif;  color:#FFFFFF; }
 
+body{
+ background: url('http://104.154.37.201/wp-content/uploads/2015/02/FONDO-SINTAGMA.jpg') !important;
+}
 .flex-viewport{
   max-height: 400px;
 }
@@ -26,6 +29,10 @@ body { font-weight: normal; overflow-x:hidden; }
 
 #slider{
  overflow: hidden;
+}
+
+#GallerySlide .flex-viewport{
+	max-height: none;
 }
 
 #carousel{

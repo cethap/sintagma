@@ -60,6 +60,215 @@ require get_template_directory() . '/inc/metaboxes/init-for-objestcs-mb.php';
 
 
 
+function proList( $atts, $content = null ){
+  
+    $a = shortcode_atts( array(
+        'tipo' => '',
+    ), $atts );      
+
+	$args = 'cat='.get_cat_ID($a['tipo']);
+	$the_query = new WP_Query( $args ); ?>
+	<div class="row">
+	<?php if ( $the_query->have_posts() ) : ?>
+		<!-- pagination here -->
+
+		<!-- the loop -->
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+		<div class="span4">
+			<?php if ( has_post_thumbnail() ) : ?>
+				<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' ); ?>
+				<a href="<?php the_permalink(); ?>">
+					<img src="<?php echo $large_image_url[0]; ?>" class="imgCentral img-responsive" />
+				</a>
+			<?php endif; ?>
+
+			<ul>
+				<li>
+					<strong><?php the_title(); ?></strong> - <?php echo get_post_custom()['descripcion'][0]; ?>
+				</li>
+				<li>
+					<strong>Ciudad:</strong> <?php echo get_post_custom()['ciudad'][0]; ?>
+				</li>
+				<li>
+					<strong>Habitaciones:</strong> <?php echo get_post_custom()['habitaciones'][0]; ?>
+				</li>
+				<li>
+					<strong>Tipo:</strong> <?php echo get_post_custom()['tipo'][0]; ?>
+				</li>
+				<li>
+					<strong>Área:</strong> <?php echo get_post_custom()['area'][0]; ?>
+				</li>
+				<li>
+					<strong>Precio:</strong> <?php echo get_post_custom()['precio'][0]; ?>
+				</li>
+			</ul>
+		</div>
+		<?php endwhile; ?>
+		<!-- end of the loop -->
+
+		<!-- pagination here -->
+
+		<?php wp_reset_postdata(); ?>
+
+	<?php else : ?>
+		<p><?php _e( 'Lo sentimos no hay Posts' ); ?></p>
+	<?php endif; ?>
+	</div>
+
+<?php
+}
+
+add_shortcode( 'proList', 'proList' );
+
+
+
+
+// [proStyle1 imagen="http://104.154.37.201/wp-content/uploads/2015/01/kitchen_adventurer_lemon_mini.jpg" titulo="El lago|Parcelación el retiro|Cali" atributos="Cali|3,2,4|Apartamentos|Apartamentos|Apartamentos"]
+
+// [proStyle2 
+// texto1="las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum." 
+// texto2="las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum." 
+// texto3="las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."]
+
+// [proStyle3 
+// titulo="INMUEBLE|ÁREA CONSTRUIDA|ÁREA PRIVADA|HABITACIONES|BAÑOS" 
+// atributos="1|Mark|Otto|@mdo|@mdo;2|Mark|Otto|@mdo|@mdo;2|Mark|Otto|@mdo|@mdo"]
+
+
+
+//[proStyle1]
+function proStyle1( $atts, $content = null ){
+  
+    $a = shortcode_atts( array(
+        'imagen' => '',
+        'titulo' => '',
+        'atributos' => '',
+    ), $atts );
+
+
+    $a['titulo'] = explode("|", $a['titulo']);
+    $a['atributos'] = explode("|", $a['atributos']);
+
+	return '
+      	<hr/>
+		<div class="span4">
+		  <img style="width: 300px; border: 1px solid rgb(221, 221, 221); padding: 10px;" src="'.$a['imagen'].'">
+		</div>
+
+		<div class="span6">
+		  <h3 style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); padding: 6px;">
+		    '.$a['titulo'][0].' <span style="font-weight: lighter ! important; font-size: 15px;">- '.$a['titulo'][1].' - '.$a['titulo'][2].'</span>
+		  </h3>
+
+		  <ul style="list-style: outside none none; margin-left: 0px; font-size: 15px; line-height: 15px;">
+		    <li><strong>Ciudad:</strong> '.$a['atributos'][0].'</li> 
+		    <li><strong>Habitaciones:</strong> '.$a['atributos'][1].'</li> 
+		    <li><strong>Tipo:</strong> '.$a['atributos'][2].'</li> 
+		    <li><strong>Área:</strong> '.$a['atributos'][3].'</li> 
+		    <li><strong>Precio:</strong> '.$a['atributos'][4].'</li>    
+		  </ul>
+
+		</div>
+
+		<div style="clear:both"></div>
+	';       
+
+}
+add_shortcode( 'proStyle1', 'proStyle1' );
+
+
+
+//[proStyle2]
+function proStyle2( $atts, $content = null ){
+  
+    $a = shortcode_atts( array(
+        'texto1' => '',
+        'texto2' => '',
+        'texto3' => '',
+    ), $atts );
+
+	return '
+		<div class="span4">
+
+		  <span style="border-top: 1px solid rgb(254, 97, 0); display: block; padding-top: 15px; text-align: justify; margin-bottom: 15px;">
+		    <h3>Descripción</h3>
+		    '.$a['texto1'].'
+		  </span>
+
+		  <span style="border-top: 1px solid rgb(254, 97, 0); display: block; padding-top: 15px; text-align: justify; margin-bottom: 15px;">
+		    <h3>Acabados</h3>
+		    '.$a['texto2'].'
+		  </span>
+
+		  <span style="border-top: 1px solid rgb(254, 97, 0); display: block; padding-top: 15px; text-align: justify; margin-bottom: 15px;">
+		    <h3>Zonas comunes</h3>
+		    '.$a['texto3'].'
+		  </span>
+
+		</div>
+	';       
+
+}
+add_shortcode( 'proStyle2', 'proStyle2' );
+
+
+
+//[proStyle3]
+function proStyle3( $atts, $content = null ){
+  
+    $a = shortcode_atts( array(
+        'titulo' => '',
+        'atributos' => '',
+    ), $atts );
+
+    $titulo = "";
+    $conten = "";
+
+    $a['titulo'] = explode("|", $a['titulo']);
+    $a['atributos'] = explode(";", $a['atributos']);
+
+    for ($i=0; $i < count($a['titulo']); $i++) { 
+    	$titulo .= "<th>";
+    		$titulo .= $a['titulo'][$i];
+    	$titulo .= "</th>";    	
+    }
+
+
+    for ($i=0; $i < count($a['atributos']); $i++) { 
+    	$conten .= "<tr>";
+    	$a['atributos'][$i] = explode("|", $a['atributos'][$i]);
+	    for ($y=0; $y < count($a['atributos'][$i]); $y++) { 
+	    	$conten .= "<td>";
+	    		$conten .= $a['atributos'][$i][$y];
+	    	$conten .= "</td>";    	
+	    }
+    	$conten .= "</tr>";    	
+    }
+
+
+	return '
+		<div class="span6">
+		  <h3 style="border-top: 1px solid rgb(254, 97, 0); padding-top: 15px;">TIPOS DE APARTAMENTO</h3>
+		  <table class="table table-striped">
+		    <thead>
+		      <tr>
+		      	'.$titulo.'
+		      </tr>
+		    </thead>
+		    <tbody>
+		    	'.$conten.'
+		    </tbody>
+		  </table>   
+		</div>
+		<div style="clear:both"></div>
+		<hr/>
+	';       
+
+}
+add_shortcode( 'proStyle3', 'proStyle3' );
+
+
+
 //[GallerySlide]
 function GallerySlider( $atts, $content = null ){
   
@@ -84,7 +293,7 @@ function GallerySlider( $atts, $content = null ){
 	return '
 	<div class="clearfix"></div>
 
-	<div id="GallerySlide" class="flexslider">
+	<div class="flexslider GallerySlide">
 	  <ul class="slides">
 	  	'.$imgs.'
 	  </ul>

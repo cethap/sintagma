@@ -11,7 +11,7 @@
 
 <div class="container">
 
-	<article id="post-<?php the_ID(); ?>" class="col-md-12">
+	<article id="post-<?php the_ID(); ?>">
 		<?php if (!is_front_page()) {?>	
 		<header class="entry-header">
 		  <h1 class="entry-title"><?php the_title(); ?></h1>

@@ -22,8 +22,8 @@ Copyright <?php echo date('Y'); ?>
 
 		<footer class="motopress-wrapper footer">
 			<div class="container">
-				<div class="row">
-					<div class="span12">
+				<div class="">
+					<div class="">
 						<div class="extrafooter">
 							<div class="row footer-widgets">
 								<div class="span3">

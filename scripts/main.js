@@ -62,9 +62,11 @@
       });
 
 
-      $('#GallerySlide').flexslider({
+      $('.GallerySlide').flexslider({
         animation: "slide"
       });
+
+      $('.GallerySlide .flex-viewport').css({'max-height':'100%'});
 
 
       $(window).resize(function(){

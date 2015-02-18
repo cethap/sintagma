@@ -73,12 +73,12 @@
 
 	<header class="motopress-wrapper header">
 		<div class="container">
-			<div class="row">
+			<div class="">
 				<div data-motopress-wrapper-file="wrapper/wrapper-header.php" data-motopress-wrapper-type="header" data-motopress-id="54c1d8935268b">
 					<div class="extra_head">
 
 						<div class="extra_head2 isStuck" style="position: fixed; top: 0px;">
-							<div class="row">
+							<div class="">
 								<div class="span3" >
 									<!-- BEGIN LOGO -->
 									<div class="logo pull-left">
